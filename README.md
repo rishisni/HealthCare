@@ -55,8 +55,69 @@ python manage.py createsuperuser  (Follow the prompts to enter email, name, pass
 ### 7 Run the Development Server 
 python manage.py runserver  
 
+```
+
+##  Authentication (JWT)
+### 1 Register a New User
+POST /api/auth/register/
+
+### 2 Login
+POST /api/auth/login/
+
+## Patient Management
+### 1 Add a Patient
+POST /api/patients/
+
+### 2 Get All Patients
+GET /api/patients/
+
+### 3 Get a Specific Patient
+GET /api/patients/{id}/
 
 
----
-Authentication (JWT)
+### 4 Update a Patient
+PUT /api/patients/{id}/
 
+### 5 Delete a Patient
+DELETE /api/patients/{id}/
+
+
+## Doctor Management
+
+### 1 Add a Doctor
+POST /api/doctors/
+
+### 2 Get All Doctors
+GET /api/doctors/
+### 3 Get a Specific Doctor
+GET /api/doctors/{id}/
+
+### 4 Update a Doctor
+PUT /api/doctors/{id}/
+
+### 5 Delete a Doctor
+DELETE /api/doctors/{id}/
+
+
+## Assigning Doctors to Patients
+
+### 1 Assign a Doctor to a Patient
+POST /api/mappings/
+
+### 2Get All Mappings
+GET /api/mappings/
+
+### 3Get All Doctors for a Specific Patient
+GET /api/mappings/{patient_id}/
+
+### 4Remove a Doctor from a Patient
+DELETE /api/mappings/{id}/
+
+
+## Notes
+
+Ensure PostgreSQL is running and configured in .env.
+
+Use Postman or curl to test API endpoints.
+
+The project follows Django best practices for security & scalability.
